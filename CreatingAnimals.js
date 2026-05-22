@@ -45,7 +45,7 @@ class AnimalFactory {
 
             case animal: "dog"
                 return new dog ();
-                
+
             case animal: "fish"
                 return new fish ();
                 
@@ -55,8 +55,3 @@ class AnimalFactory {
         }
     }
 }
-
-//?????
-    //idk man 
-
-
