@@ -1,35 +1,34 @@
-//price starategy
-//Using strategy method 
+// Used to edit pricing based on a person's age or status. Mainly used for tickets, but is extendable to anything else.
+
+// Price strategy
+// Using strategy method 
+
 class PricingStrategy {
-  calculatePrice() {}
+  calculatePrice(basePrice) {
+    return basePrice;
+  }
 }
 
-
-//adult price 
 class AdultPricing extends PricingStrategy {
-  calculatePrice() {
-    return 20;
+  calculatePrice(basePrice) {
+    return basePrice * 1.0;
   }
 }
 
-//senior price
 class SeniorPricing extends PricingStrategy {
-  calculatePrice() {
-    return 15;
-
+  calculatePrice(basePrice) {
+    return basePrice * 0.7;
   }
 }
 
-//student price 
 class StudentPricing extends PricingStrategy {
-  calculatePrice() {
-    return 10;
+  calculatePrice(basePrice) {
+    return basePrice * 0.8;
   }
 }
 
-//price for kids
 class ChildPricing extends PricingStrategy {
-  calculatePrice() {
-    return 5;
+  calculatePrice(basePrice) {
+    return basePrice * 0.5;
   }
 }
