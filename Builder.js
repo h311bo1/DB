@@ -7,6 +7,7 @@ class Order {
 	billingAddress;
 	shipping;
 	payment;
+	comment;
 
 	constructor(userId) {
 		this.order = {userId};
@@ -22,7 +23,6 @@ class Order {
 		return this;
 	}
 
-	// optional
 	addShippingAddress(shippingAddress) {
 		this.order.shippingAddress = shippingAddress;
 		return this;
@@ -41,16 +41,22 @@ class Order {
 		return this;
 	}
 
-	addComment(comment) { // optional
+	addComment(comment) {
 		this.order.comment = comment;
 	}
 
 	build() {
 		if (!this.order.billingAddress)
 			this.order.billingAddress = this.order.shippingAddress;
+		if (!this.order.quantity)
+			this.order.quantity = 1;
+		if (!this.order.comment)
+			this.order.comment = null;
 		return this.order;
 	}
 }
+
+// comment, quantity, and billing address don't have to be explicitly added
 
 const order = new Order('122')
 	.addItem('Charging Cable')
